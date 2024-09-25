@@ -1,77 +1,181 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-  
-  html,body
-  {
+html, body {
     margin: 0;
     padding: 0;
-  }
-  .home
-  {
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+/* General Reset for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* ----- Home Section ----- */
+.home {
     text-align: center;
     color: #f5f5f5;
-    font-size: large;
-    font-family:'Times New Roman', Times, serif
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+}
 
- 
-  }
-  *
-  {
-    font-family: 'Oswald', sans-serif;
+/* Body */
+.body {
+    text-align: center;
+}
 
-
-  }
-  .primary-button
-  {
+/* ----- Buttons ----- */
+.primary-button {
     color: #141212;
     text-transform: uppercase;
     font-size: 15px;
-    background: linear-gradient(45deg,#229799,#f5f5f5) ;
-   border-radius: 30px;
+    background: linear-gradient(45deg, #229799, #f5f5f5);
+    border-radius: 30px;
     padding: 12px 30px;
     border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
 
-  }
-  .primary-button:hover
-  {
-    background: linear-gradient(260deg,#229799,#f5f5f5 );
-  }
-  .body
-  {
-    text-align: center;
-  }
-  
-  /* -----NAVBAR------ */
-  nav
-  {
+.primary-button:hover {
+    background: linear-gradient(260deg, #229799, #f5f5f5);
+    transform: translateY(-3px); /* Slight hover lift effect */
+}
+
+/* ----- NAVBAR ----- */
+nav {
+ 
+   
     width: 100%;
-   display: flex;
+    display: flex; 
     justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #141212; /* Dark background for navbar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow to navbar */
+    display: none;
+}
 
+nav .logo {
+    width: 80%;
+    height: 80%;
+}
 
-  }
-nav .logo
-  {
-    width:80%;
-    height:80%;
-  }
-  .nav-button
-  {
+.nav-button {
     color: #141212;
-    width: 80px;
+    width: 120px;
     height: 50px;
     margin-right: 10px;
-    background: linear-gradient(260deg,#cef1f1,#f5f5f5 );
+    background: linear-gradient(260deg, #cef1f1, #f5f5f5);
     border-radius: 30px;
     border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-  }
-.overlay
-{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background: linear-gradient(45deg,#5c5f5f,#000000);
- 
+.nav-button:hover {
+    background: linear-gradient(260deg, #229799, #f5f5f5); /* Hover effect */
+}
+
+/* ----- Overlay ----- */
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('/Users/bhavya/hackbattle_1/jobinder/src/images/bg2.png'); /* Dark gradient over background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----- Auth Modal ----- */
+.auth-modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: 0 auto;
+    max-width: 360px;
+    height: 600px;
+    background-color: rgba(1, 6, 8, 0.95); /* Slight transparency for style */
+    border-radius: 10px;
+    padding: 40px;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Modal shadow for depth */
+}
+
+.auth-modal .close-icon {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+}
+
+.auth-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-modal input[type="email"],
+.auth-modal input[type="password"] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.auth-modal input[type="submit"] {
+    background-color: #229799;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 0;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-modal input[type="submit"]:hover {
+    background-color: #1e8676; /* Darker on hover */
+}
+
+.auth-modal p {
+    color: #f5f5f5;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+hr {
+    border: 1px solid #444;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #f5f5f5;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* ----- Animations ----- */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in-text {
+    animation: fadeIn 2s ease-in-out;
 }
